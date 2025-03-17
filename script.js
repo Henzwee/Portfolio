@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Show footer only on 'work' page
             if (targetPage === "work") {
-                footer.style.display = "block";
+                setTimeout(() => { footer.style.display = "block"; }, 500);
             } else {
                 footer.style.display = "none";
             }
