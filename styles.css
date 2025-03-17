@@ -20,8 +20,28 @@ h1 {
     font-family: 'Roboto Mono', monospace;
 }
 
+h2 {
+    font-size: 1.5rem;
+    color: #E5C100;
+    margin-bottom: 5px;
+    transition: color 0.3s ease-in-out;
+}
+
+h2:hover {
+    color: #FFD700;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover h2 {
+    text-decoration: underline;
+}
+
 p {
     font-size: 1rem;
+    margin-bottom: 15px;
 }
 
 /* Loading and Access Granted Screens */
