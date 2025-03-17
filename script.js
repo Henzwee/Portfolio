@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const navButtons = document.querySelectorAll(".nav-button");
     const textContents = document.querySelectorAll(".text-content");
     const buttonsContainer = document.querySelector(".buttons");
+    const footer = document.querySelector("footer");
 
     // Loading animation (dots cycling) without shifting, always at least 1 dot
     let dots = 1;
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
             mainContent.style.display = "block";
             mainContent.style.opacity = "1";
             document.getElementById("about").classList.add("active"); // Show default content
+            footer.style.display = "none"; // Hide footer on initial load
         }, 2000);
     }, 4000);
 
@@ -63,6 +65,13 @@ document.addEventListener("DOMContentLoaded", function() {
                         newContent.style.opacity = "1";
                     }, 50);
                 }, 500);
+            }
+
+            // Show footer only on 'work' page
+            if (targetPage === "work") {
+                footer.style.display = "block";
+            } else {
+                footer.style.display = "none";
             }
         });
     });
