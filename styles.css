@@ -125,6 +125,12 @@ p {
   cursor: pointer;
 }
 
+/* Nudge GitHub icon 5px left (assumes "github-button" class on the GitHub link) */
+.github-button {
+  position: relative;
+  left: -5px;
+}
+
 .social-button:hover {
   transform: scale(1.1);
 }
@@ -156,9 +162,4 @@ ul {
 .date-paragraph {
   margin-top: 0;      /* reset margin if needed */
   padding-top: 2rem;  /* add padding to ensure visible space */
-}
-
-/* Nudge the first icon (GitHub) left by 5px */
-.social-button:first-of-type {
-  margin-left: -5px;
 }
