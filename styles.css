@@ -157,3 +157,8 @@ ul {
   margin-top: 0;      /* reset margin if needed */
   padding-top: 2rem;  /* add padding to ensure visible space */
 }
+
+/* Nudge the first icon (GitHub) left by 5px */
+.social-button:first-of-type {
+  margin-left: -5px;
+}
