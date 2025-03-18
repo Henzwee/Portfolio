@@ -121,3 +121,7 @@ ul {
     list-style-type: none;
     padding-left: 20px;
 }
+
+.date-paragraph {
+  margin-top: 2rem; 
+}
