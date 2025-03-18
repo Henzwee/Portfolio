@@ -123,5 +123,7 @@ ul {
 }
 
 .date-paragraph {
-  margin-top: 2rem; 
+  margin-top: 0;      /* reset margin if needed */
+  padding-top: 2rem;  /* add padding to ensure visible space */
 }
+
