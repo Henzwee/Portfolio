@@ -107,10 +107,10 @@ p {
 /* Social Buttons Container (inside .buttons) */
 .social-buttons {
   display: flex;
-  width: 150px;         /* Match the nav-button width for alignment */
+  width: 150px;         /* Matches the nav-button width */
   justify-content: center;
-  gap: 10px;            /* Space between icons */
-  margin: 10px;         /* Same margin as .nav-button for consistency */
+  gap: 20px;            /* Increase gap to space icons more */
+  margin: 10px;
 }
 
 /* Social Button (Icon-Only) */
@@ -129,10 +129,9 @@ p {
   transform: scale(1.1);
 }
 
-/* Adjust SVG icon size if needed */
 .social-button svg {
-  width: 50px;
-  height: 50px;
+  width: 40px;         
+  height: 40px;
 }
 
 /* Text Content Layout (Right Side) */
