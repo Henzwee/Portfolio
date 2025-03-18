@@ -39,6 +39,12 @@ document.addEventListener("DOMContentLoaded", function() {
       const newContent = document.getElementById(targetPage);
 
       if (activeContent !== newContent) {
+        // Hide any update text in the active content
+        const activeUpdate = activeContent.querySelector(".update-text");
+        if (activeUpdate) {
+          activeUpdate.style.opacity = "0";
+        }
+
         // Animate out the active content
         activeContent.classList.remove("active");
         activeContent.style.transition = "transform 0.5s ease-in-out, opacity 0.5s ease-in-out";
@@ -56,6 +62,15 @@ document.addEventListener("DOMContentLoaded", function() {
             newContent.style.transition = "transform 0.5s ease-in-out, opacity 0.5s ease-in-out";
             newContent.style.transform = "translateX(0)";
             newContent.style.opacity = "1";
+
+            // Delay the appearance of the update text for work and experience pages
+            const updateText = newContent.querySelector(".update-text");
+            if (updateText) {
+              setTimeout(() => {
+                updateText.style.transition = "opacity 1s ease-in-out";
+                updateText.style.opacity = "1";
+              }, 1000); // 1-second delay
+            }
           }, 50);
         }, 500);
       }
