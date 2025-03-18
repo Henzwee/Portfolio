@@ -104,6 +104,38 @@ p {
     transform: scale(1.04);
 }
 
+/* Social Buttons Container (inside .buttons) */
+.social-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px; /* Space above social buttons */
+}
+
+/* Social Button Styling */
+.social-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #FFD700;
+  border-radius: 50%;
+  background: none;
+  color: #FFD700;
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-button:hover {
+  transform: scale(1.1);
+}
+
+/* Adjust SVG icon size if needed */
+.social-button svg {
+  width: 24px;
+  height: 24px;
+}
+
 /* Text Content Layout (Right Side) */
 .text-content {
     opacity: 0;
@@ -122,8 +154,8 @@ ul {
     padding-left: 20px;
 }
 
+/* Date Paragraph Spacing */
 .date-paragraph {
   margin-top: 0;      /* reset margin if needed */
   padding-top: 2rem;  /* add padding to ensure visible space */
 }
-
