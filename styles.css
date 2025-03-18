@@ -128,7 +128,7 @@ ul {
     padding-left: 20px; /* Adjusted indent for list items */
 }
 
-#update-date {
+#update-date { 
   position: fixed;
   bottom: 20px;  /* distance from bottom of screen */
   left: 20px;    /* distance from left of screen */
