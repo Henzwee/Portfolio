@@ -6,13 +6,10 @@ body {
     color: #E5C100;
     font-family: 'Roboto Mono', monospace;
     text-align: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
     overflow: auto;
     position: relative;
+    padding: 20px; /* Added padding for spacing */
 }
 
 h1 {
@@ -45,7 +42,8 @@ p {
 }
 
 /* Loading and Access Granted Screens */
-#loading-screen, #access-screen {
+#loading-screen, 
+#access-screen {
     background-color: #3b0000;
     width: 50%;
     padding: 50px;
@@ -57,21 +55,24 @@ p {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centers them properly */
+    transform: translate(-50%, -50%);
+}
+
+/* Wrapper for main content and update date */
+#wrapper {
+    width: 80%;
+    margin: 0 auto;
 }
 
 /* Main Content Layout */
 #main-content {
-    width: 80%;
+    width: 100%;
     background-color: #3b0000;
     padding: 30px;
     border-radius: 10px;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    display: flex;
-    align-items: flex-start;
-    position: absolute;
-    top: 10vh; /* Ensures container stays in the same position */
+    margin-bottom: 30px; /* Space between main content and update date */
 }
 
 .container {
@@ -88,7 +89,7 @@ p {
     flex-direction: column;
     align-items: flex-start;
     width: 25%;
-    margin-top: 20px; /* Moves buttons down slightly */
+    margin-top: 20px;
     position: relative;
 }
 
@@ -125,14 +126,14 @@ p {
 /* List Style Fix */
 ul {
     list-style-type: none;
-    padding-left: 20px; /* Adjusted indent for list items */
+    padding-left: 20px;
 }
 
-/* Update Date styling */
+/* Update Date Styling */
 #update-date {
-  display: none;      /* Hidden by default; shown via JS on Work/Experience */
-  margin-left: 100px; /* Adjust horizontal position */
-  margin-top: 50px;   /* Adjust vertical spacing if needed */
-  /* You can add other styling here (font, color, etc.) */
+    display: none;      /* Hidden by default; toggled via JS */
+    margin-left: 100px; /* Shifts it 100px to the right */
+    margin-top: 50px;   /* Space above update date */
+    font-size: 1rem;
+    color: #E5C100;
 }
-
