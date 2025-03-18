@@ -4,34 +4,50 @@ document.addEventListener("DOMContentLoaded", function() {
   const accessScreen = document.getElementById("access-screen");
   const mainContent = document.getElementById("main-content");
   const navButtons = document.querySelectorAll(".nav-button");
-  const textContents = document.querySelectorAll(".text-content");
+  const updateDate = document.getElementById("update-date");
 
-  // Loading animation (dots cycling)
+  // --- LOADING ANIMATION WITH FIXED-WIDTH DOTS ---
   let dots = 1;
   const baseText = "Loading";
   const maxDots = 3;
+  
+  // Style the loading text so it doesn't shift
+  loadingText.style.display = "inline-block";
+  loadingText.style.textAlign = "center";
   loadingText.innerHTML = `${baseText}<span id='dots'>.</span>`;
+  
   const dotsSpan = document.getElementById("dots");
-
+  dotsSpan.style.display = "inline-block";
+  dotsSpan.style.minWidth = "3ch"; // Fixed width for dots
+  dotsSpan.style.textAlign = "left";
+  
+  // Cycle dots (1 to 3) while preserving fixed width
   setInterval(() => {
     dots = (dots % maxDots) + 1;
-    dotsSpan.textContent = ".".repeat(dots);
+    dotsSpan.textContent = ".".repeat(dots) + " ".repeat(maxDots - dots);
   }, 500);
 
-  // Simulate loading time
+  // --- SIMULATED LOADING SEQUENCE ---
   setTimeout(() => {
+    // Hide loading screen and show "Access Granted"
     loadingScreen.style.display = "none";
     accessScreen.style.display = "flex";
 
     setTimeout(() => {
+      // Hide "Access Granted" and display main content
       accessScreen.style.display = "none";
       mainContent.style.display = "block";
       mainContent.style.opacity = "1";
+
+      // Default to "About Me"
       document.getElementById("about").classList.add("active");
+
+      // Hide update date initially (only appears on Work/Experience)
+      updateDate.style.display = "none";
     }, 2000);
   }, 4000);
 
-  // Navigation button click event
+  // --- NAVIGATION LOGIC ---
   navButtons.forEach(button => {
     button.addEventListener("click", function() {
       const targetPage = this.getAttribute("data-page");
@@ -39,20 +55,17 @@ document.addEventListener("DOMContentLoaded", function() {
       const newContent = document.getElementById(targetPage);
 
       if (activeContent !== newContent) {
-        // Hide any update text in the active content
-        const activeUpdate = activeContent.querySelector(".update-text");
-        if (activeUpdate) {
-          activeUpdate.style.opacity = "0";
-        }
-
-        // Animate out the active content
+        // Animate out current content
         activeContent.classList.remove("active");
         activeContent.style.transition = "transform 0.5s ease-in-out, opacity 0.5s ease-in-out";
         activeContent.style.transform = "translateX(100%)";
         activeContent.style.opacity = "0";
 
         setTimeout(() => {
+          // Hide old content
           activeContent.style.display = "none";
+
+          // Show and animate in new content
           newContent.style.display = "block";
           newContent.style.opacity = "0";
           newContent.style.transform = "translateX(100%)";
@@ -62,17 +75,17 @@ document.addEventListener("DOMContentLoaded", function() {
             newContent.style.transition = "transform 0.5s ease-in-out, opacity 0.5s ease-in-out";
             newContent.style.transform = "translateX(0)";
             newContent.style.opacity = "1";
-
-            // Delay the appearance of the update text for work and experience pages
-            const updateText = newContent.querySelector(".update-text");
-            if (updateText) {
-              setTimeout(() => {
-                updateText.style.transition = "opacity 1s ease-in-out";
-                updateText.style.opacity = "1";
-              }, 1000); // 1-second delay
-            }
           }, 50);
         }, 500);
+      }
+
+      // Show update date only on Work or Experience pages
+      if (targetPage === "work" || targetPage === "experience") {
+        setTimeout(() => {
+          updateDate.style.display = "block";
+        }, 500);
+      } else {
+        updateDate.style.display = "none";
       }
     });
   });
