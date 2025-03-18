@@ -128,9 +128,11 @@ ul {
     padding-left: 20px; /* Adjusted indent for list items */
 }
 
-#update-date { 
-  position: fixed;
-  bottom: 20px;  /* distance from bottom of screen */
-  left: 20px;    /* distance from left of screen */
-  text-align: left;
+/* Update Date styling */
+#update-date {
+  display: none;      /* Hidden by default; shown via JS on Work/Experience */
+  margin-left: 100px; /* Adjust horizontal position */
+  margin-top: 50px;   /* Adjust vertical spacing if needed */
+  /* You can add other styling here (font, color, etc.) */
 }
+
