@@ -59,6 +59,11 @@ p {
     transform: translate(-50%, -50%);
 }
 
+/* Prevent Access Granted from breaking into multiple lines */
+#access-screen h1 {
+    white-space: nowrap;
+}
+
 /* Main Content Layout */
 #main-content {
     width: 80%;
@@ -109,7 +114,7 @@ p {
   display: flex;
   width: 150px;         /* Matches the nav-button width */
   justify-content: center;
-  gap: 20px;            /* Increase gap to space icons more */
+  gap: 20px;            /* Space between icons */
   margin: 10px;
 }
 
@@ -125,10 +130,9 @@ p {
   cursor: pointer;
 }
 
-/* Nudge GitHub icon 5px left (assumes "github-button" class on the GitHub link) */
 .github-button {
   position: relative;
-  left: -5px;
+  left: -5px; /* Nudge GitHub icon 5px to the left */
 }
 
 .social-button:hover {
@@ -136,7 +140,7 @@ p {
 }
 
 .social-button svg {
-  width: 40px;         
+  width: 40px;
   height: 40px;
 }
 
@@ -160,6 +164,44 @@ ul {
 
 /* Date Paragraph Spacing */
 .date-paragraph {
-  margin-top: 0;      /* reset margin if needed */
-  padding-top: 2rem;  /* add padding to ensure visible space */
+  margin-top: 0;
+  padding-top: 2rem;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    /* Stack container vertically */
+    .container {
+        flex-direction: column;
+    }
+    
+    /* Make left column (buttons) full width and center them */
+    .buttons {
+        width: 100%;
+        align-items: center;
+    }
+    
+    /* Nav buttons adjust to a wider width on mobile */
+    .nav-button {
+        width: 80%;
+        margin: 10px auto;
+    }
+    
+    /* Social buttons container centers and adjusts spacing */
+    .social-buttons {
+        width: auto;
+        justify-content: center;
+        gap: 20px;
+        margin: 10px 0;
+    }
+    
+    /* Make text content full width */
+    .text-content {
+        width: 100%;
+    }
+    
+    /* Lock scrolling on mobile during loading screens */
+    body {
+        overflow: hidden;
+    }
 }
