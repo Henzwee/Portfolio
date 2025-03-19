@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
     dotsSpan.textContent = ".".repeat(dots) + " ".repeat(maxDots - dots);
   }, 500);
 
-  // --- SIMULATED LOADING SEQUENCE ---
+    // --- SIMULATED LOADING SEQUENCE ---
   setTimeout(() => {
     loadingScreen.style.display = "none";
     accessScreen.style.display = "flex";
@@ -33,11 +33,15 @@ document.addEventListener("DOMContentLoaded", function() {
       accessScreen.style.display = "none";
       mainContent.style.display = "block";
       mainContent.style.opacity = "1";
-      
+    
       // Show default page ("About Me")
       document.getElementById("about").classList.add("active");
+
+      // Re-enable scrolling after loading finishes
+      document.body.style.overflow = "auto";
     }, 2000);
   }, 4000);
+
 
   // --- NAVIGATION LOGIC ---
   navButtons.forEach(button => {
