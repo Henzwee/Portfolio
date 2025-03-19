@@ -14,8 +14,7 @@ body {
 
 h1 {
     font-size: 2rem;
-    /* Use VT323 for a more robotic feel */
-    font-family: 'VT323', monospace;
+    font-family: 'Press Start 2P', monospace;
 }
 
 h2 {
