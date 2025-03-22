@@ -167,6 +167,11 @@ ul {
   padding-top: 2rem;
 }
 
+h4 {
+    font-size: 0.5rem;
+    margin-TOP: 3px;
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) and (orientation: portrait) {
     /* Stack container vertically */
