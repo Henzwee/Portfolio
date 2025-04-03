@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
     dotsSpan.textContent = ".".repeat(dots) + " ".repeat(maxDots - dots);
   }, 500);
 
-    // --- SIMULATED LOADING SEQUENCE ---
+  // --- SIMULATED LOADING SEQUENCE ---
   setTimeout(() => {
     loadingScreen.style.display = "none";
     accessScreen.style.display = "flex";
@@ -36,12 +36,12 @@ document.addEventListener("DOMContentLoaded", function() {
     
       // Show default page ("About Me")
       document.getElementById("about").classList.add("active");
+      document.querySelector('.nav-button[data-page="about"]').classList.add("active");
 
       // Re-enable scrolling after loading finishes
       document.body.style.overflow = "auto";
     }, 2000);
   }, 4000);
-
 
   // --- NAVIGATION LOGIC ---
   navButtons.forEach(button => {
@@ -49,6 +49,10 @@ document.addEventListener("DOMContentLoaded", function() {
       const targetPage = this.getAttribute("data-page");
       const activeContent = document.querySelector(".text-content.active");
       const newContent = document.getElementById(targetPage);
+
+      // Update nav button active state
+      navButtons.forEach(btn => btn.classList.remove("active"));
+      this.classList.add("active");
 
       if (activeContent !== newContent) {
         activeContent.classList.remove("active");
