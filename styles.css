@@ -111,8 +111,8 @@ p {
 
 .nav-button.active {
     transform: scale(1.04);
-    color: #D49100;         /* Dirty gold/orange text */
-    border-color: #D49100;  /* Dirty gold/orange border */
+    color: #E58E00;         /* Dirty gold/orange text */
+    border-color: #E58E00;  /* Dirty gold/orange border */
 }
 
 .nav-button:hover:not(.active) {
