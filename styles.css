@@ -109,6 +109,14 @@ p {
     transform: scale(1.04);
 }
 
+.nav-button.active {
+    transform: scale(1.04);
+}
+
+.nav-button:hover:not(.active) {
+    transform: scale(1.04);
+}
+
 /* Social Buttons Container (inside .buttons) */
 .social-buttons {
   display: flex;
