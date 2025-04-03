@@ -111,8 +111,8 @@ p {
 
 .nav-button.active {
     transform: scale(1.04);
-    color: #FF4500;
-    border-color: #FF4500; /* color change */
+    color: #FF6A00;
+    border-color: #FF6A00; /* right here! */
 }
 
 .nav-button:hover:not(.active) {
