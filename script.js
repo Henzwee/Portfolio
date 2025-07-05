@@ -77,3 +77,39 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+<script>
+  const form = document.querySelector('.contact-form');
+  const status = document.getElementById('form-status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const plainFormData = Object.fromEntries(formData.entries());
+    const formJSON = JSON.stringify(plainFormData);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: formJSON
+      });
+
+      if (response.ok) {
+        status.textContent = 'Form Sent!';
+        form.reset();
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          status.textContent = data.errors.map(e => e.message).join(', ');
+        } else {
+          status.textContent = 'Oops! Something went wrong.';
+        }
+      }
+    } catch (error) {
+      status.textContent = 'Oops! Network error or Formspree issue.';
+    }
+  });
+</script>
