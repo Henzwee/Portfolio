@@ -206,6 +206,56 @@ h4 {
   text-decoration: none;
 }
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin-top: 30px;
+}
+
+.contact-form label {
+  font-weight: bold;
+  color: #ccc;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  background-color: #5a0000; /* dark red box */
+  border: 1px solid #a33; /* slightly lighter border */
+  color: #fff;
+  font-family: 'Roboto Mono', monospace;
+  border-radius: 4px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ccc;
+}
+
+.contact-form button {
+  background-color: #E5C100;
+  color: #000;
+  font-family: 'Roboto Mono', monospace;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.contact-form button:hover {
+  background-color: #d4b000;
+}
+
+.form-status {
+  font-family: 'Roboto Mono', monospace;
+  color: #E5C100;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) and (orientation: portrait) {
     /* Stack container vertically */
