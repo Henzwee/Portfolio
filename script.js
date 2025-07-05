@@ -77,10 +77,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
-<script>
-  const form = document.querySelector('.contact-form');
-  const status = document.getElementById('form-status');
 
+ const form = document.querySelector('.contact-form');
+const status = document.getElementById('form-status');
+
+if (form && status) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
@@ -112,4 +113,4 @@ document.addEventListener("DOMContentLoaded", function() {
       status.textContent = 'Oops! Network error or Formspree issue.';
     }
   });
-</script>
+}
