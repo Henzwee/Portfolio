@@ -194,6 +194,11 @@ h4 {
     margin-bottom: 2rem;
 }
 
+h5 {
+    font-size: 2rem;
+    font-family: 'Roboto Mono', monospace;
+    margin-bottom: 0; /* Remove default bottom margin on h5 */
+}
 /* ---------- Contact Form Styling ---------- */
 
 .contact-form {
