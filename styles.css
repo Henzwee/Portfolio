@@ -70,7 +70,7 @@ p {
 }
 
 /* Prevent Access Granted from breaking into multiple lines */
-#access-screen h1 {
+#access-screen p {
     white-space: nowrap;
 }
 
